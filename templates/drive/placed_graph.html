@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'drive/graphs/result_round.png' %}" rel="stylesheet" type="image/png">
+</head>
+<body>
+
+    {% block content %}
+
+    <p align="center"><img src="{% static 'drive/graphs/result_round.png' %}"></p>
+    <br>
+
+{% endblock %}
+</body>

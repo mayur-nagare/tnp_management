@@ -1,0 +1,124 @@
+{% load static %}
+<html>
+<head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+
+
+body {
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+	font-size: 16px;
+	background-image: url("{% static 'signup/images/icons/graphbg.png' %}");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+}
+.container {
+	width: calc(4*170px);
+	/*height: calc(2*170px);
+	box-shadow: 0 0 10px rgba(0,0,0,.6);*/
+	margin: 100px auto;
+	padding-top: 90px;
+
+}
+
+
+.tile {
+	width: 170px;
+	height: 170px;
+	text-align: center;
+	float: left;
+}
+
+.tile {
+	outline: 7px solid rgba(255,255,255,0);
+	transition: outline .5s;
+    position: relative; /* outline */
+}
+
+.tile:hover {
+	outline-color: rgba(255,255,255,.4);
+	transition: outline .5s;
+    z-index: 3000 !important; /* outline */
+}
+
+.tile > a {
+	width: inherit;
+	height: inherit;
+	display: block;
+	color: #fff;
+	text-decoration: none !important;
+}
+
+.col1 { background-color: #ff6699; }
+.col2 { background-color: #cc66ff; }
+.col3 { background-color: #ff6666; }
+.col4 { background-color: #ff8080; }
+
+.blue { background-color: #00c0e4; }
+.mint { background-color: #2ecc71; }
+.purple { background-color: #7658f8; }
+
+.yellow { background-color: #eac14d; }
+.red { background-color: #e6567a; }
+.pink { background-color: #cb70d7; }
+
+img.icon {
+	width: 70px;
+	height: 70px;
+	margin: 28px 0 14px;
+}
+
+.title {
+	display: block;
+}
+
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+</style>
+</head>
+<body>
+<div class="container" >
+<h1 align="center">
+    REPORT GENERATION
+</h1>
+    <br>
+      <div class="tile col1" id="placed_analysis">
+            <a href="{% url 'placed_analysis' %}">
+                  <img src="{% static 'signup/images/icons/bar.png' %}" class="icon" />
+                  <span class="title">Placed Analysis</span>
+            </a>
+      </div>
+
+      <div class="tile col2" id="college_analysis">
+            <a href="{% url 'college_analysis' %}">
+                  <img src="{% static 'signup/images/icons/pie.png' %}" class="icon" />
+                <span class="title">College Analysis</span>
+            </a>
+      </div>
+
+    <div class="tile col3" id="total_analysis">
+                <a href="{% url 'total_analysis' %}">
+				      <img src="{% static 'signup/images/icons/pie.png' %}" class="icon" />
+      				<span class="title">Total Analysis</span>
+    			</a>
+    </div>
+    <div class="tile col4" id="company_analysis">
+            <a href="{% url 'company_analysis' %}">
+                  <img src="{% static 'signup/images/icons/bar.png' %}" class="icon" />
+                  <span class="title">Company Analysis</span>
+            </a>
+    </div>
+
+</div>
+</body>
+
+</html>

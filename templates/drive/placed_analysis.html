@@ -1,0 +1,230 @@
+<!--{% load static %}
+<head>
+    <title>
+        ANALYSIS OF PLACED CANDIDATE
+    </title>
+<link href="{% static 'drive/graphs/result_round.png' %}" rel="stylesheet" type="image/png">
+
+<body>
+
+<h1 align="center">
+    WELCOME TO DYPCOE TRAINING
+    <br>AND PLACEMENT CELL
+</h1>
+<p align="center"><img src="{% static 'drive/graphs/result_round.png' %}"></p>
+<br>
+
+</body>
+</html>
+-->
+{% load static %}
+
+<html lang="en">
+<head>
+	<title>Round Wise Details</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/images/icons/favicon.ico' %}" rel="icon" type="image/png"/>
+	<!--===============================================================================================-->
+	<link href="v{% static 'signup/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/fonts/font-awesome-4.7.0/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/fonts/iconic/css/material-design-iconic-font.min.css' %}" rel="stylesheet"
+		  type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/vendor/animate/animate.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/vendor/animsition/css/animsition.min.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/vendor/select2/select2.min.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/vendor/daterangepicker/daterangepicker.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<link href="{% static 'signup/css/util.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'signup/css/main.css' %}" rel="stylesheet" type="text/css">
+	<!--===============================================================================================-->
+	<style>
+   #datefield  *{
+		 width: 200px;
+	     height: 60px;
+		 margin: 0 auto;
+
+
+  height: 35px;
+  margin: 0 auto;
+  width: 100%;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  /*background-color: #959595;*/
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 3px;
+  /*color: #fff;*/
+}
+input[type=date]::-webkit-datetime-edit-month-field {attendance/
+  color: red;
+}
+input[type=date]::-webkit-datetime-edit-day-field {
+  color: white;
+}
+input[type=date]::-webkit-datetime-edit-year-field {
+  color: blue;
+}
+input[type=date]::-webkit-clear-button {
+  font-size: 18px;
+  height: 30px;
+  position: relative;
+  right: 5px;
+  margin-right: 4px;
+}
+input[type=date]::-webkit-inner-spin-button {
+  height: 30px;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  font-size: 18px;
+}
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+  background-color: #959595;
+  color: #e6e6e6;
+  cursor: pointer;
+}
+input[type=date]::-webkit-calendar-picker-indicator:active {
+  color: blue;
+}
+}
+--------------------------------------------------------------------------------
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  //padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  /*background-color: #111;*/
+}
+
+.right {
+  right: 0;
+  /*background-color: black;*/
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/*label{
+    padding: 10px;
+    background: red;
+    display: table;
+    color: #fff;
+     }
+*/
+
+input[type="file"] {
+    display: none;
+     padding: 20px 50px;
+     line-height: 1.2;
+}
+
+	</style>
+</head>
+<body>
+<div>
+	{% block content %}
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'signup/images/bg-01.jpg' %});">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form action="{% url 'placed_analysis' %}" class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						ROUND WISE DETAILS
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Name is required">
+						<span class="label-input100">Company-Name</span>
+						<input class="input100" id="id_name" maxlength="20" name="name" placeholder="Type Company_Name"
+							   required type="text">
+						<span class="focus-input100" data-symbol="&#xf3e9;"></span>
+					</div>
+
+
+					<div data-validate="Date is required" id="datefield">
+						<span class="label-input100">DATE</span>
+						<input class="input100" id="id_date" name="drive_date" placeholder="Type Date" required
+							   type="date">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="text-right p-t-8 p-b-31">
+					</div>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Search
+							</button>
+						</div>
+					</div>
+				</form>
+				{% if error %}
+				{{ error }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
+
+
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/animsition/js/animsition.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'signup/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/select2/select2.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'signup/vendor/daterangepicker/daterangepicker.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/vendor/countdowntime/countdowntime.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'signup/js/main.js' %}"></script>
+	<!--===============================================================================================-->
+
+</div>
+
+
+</body>
+</html>
